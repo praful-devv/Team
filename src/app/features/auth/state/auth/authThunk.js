@@ -1,0 +1,27 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { api } from "../../../../../config/axios";
+
+export const authEmployee = createAsyncThunk(
+  "auth/login",
+  async (credentials, thunkapi) => {
+    try {
+      const res = await api.post("/auth/login", credentials);
+    //   console.log(res.data.data);
+      return res.data.data;
+    } catch (error) {
+      return thunkapi.rejectWithValue(error);
+    }
+  },
+);
+
+
+export const  currentLogin = createAsyncThunk('user/me',async(_,thunkapi)=>{
+
+    try {
+        let res = await api.get("/auth/me");
+        console.log(res)
+        return res.data.user
+    } catch (error) {
+        return thunkapi.rejectWithValue(error)
+    }
+})
