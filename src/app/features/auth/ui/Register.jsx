@@ -1,38 +1,28 @@
 import authHooks from "../hooks/authHooks";
 
 function Register() {
-
-    const {
-      register,
-      handleSubmit,
-      onRegister,
-      navigate,
-      formState: { errors },
-    } = authHooks();
- 
+  const {
+    register,
+    handleSubmit,
+    onRegister,
+    navigate,
+    formState: { errors },
+  } = authHooks();
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#1b2330] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
-        {/* Logo */}
         <div className="text-center mb-8">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600 text-white font-bold text-xl">
-            A
-          </div>
-
-          <h1 className="text-3xl font-bold text-white">Create your account</h1>
-
-          <p className="mt-2 text-slate-400">
-            Get started with your account today
-          </p>
+          <h1 className="text-3xl font-bold text-[#f8f6f0]">
+            Create your account
+          </h1>
         </div>
 
-        {/* Card */}
-        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
+        <div className="rounded-2xl border border-[#c9a961]/40 bg-[#f8e6f0] p-8 shadow-2xl">
           <form onSubmit={handleSubmit(onRegister)} className="space-y-5">
-            {/* Full Name */}
+           
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-200">
+              <label className="mb-2 block text-sm font-medium text-[#1b2340]">
                 Full Name
               </label>
 
@@ -42,19 +32,18 @@ function Register() {
                 {...register("fullName", {
                   required: "Full name is required",
                 })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                className="w-full rounded-lg border border-[#c9a961]/50 bg-white px-4 py-3 text-[#1b2340] outline-0"
               />
 
               {errors.fullName && (
-                <p className="mt-1 text-sm text-red-400">
+                <p className="mt-1 text-sm text-red-600">
                   {errors.fullName.message}
                 </p>
               )}
             </div>
 
-            {/* Email */}
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-200">
+              <label className="mb-2 block text-sm font-medium text-[#1b2340]">
                 Email
               </label>
 
@@ -68,19 +57,18 @@ function Register() {
                     message: "Enter a valid email",
                   },
                 })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                className="w-full rounded-lg border border-[#c9a961]/50 bg-white px-4 py-3 text-[#1b2340] outline-0"
               />
 
               {errors.email && (
-                <p className="mt-1 text-sm text-red-400">
+                <p className="mt-1 text-sm text-red-600">
                   {errors.email.message}
                 </p>
               )}
             </div>
 
-            {/* Password */}
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-200">
+              <label className="mb-2 block text-sm font-medium text-[#1b2340]">
                 Password
               </label>
 
@@ -94,33 +82,32 @@ function Register() {
                     message: "Password must be at least 8 characters",
                   },
                 })}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                className="w-full rounded-lg border border-[#c9a961]/50 bg-white px-4 py-3 text-[#1b2340] outline-0"
               />
 
               {errors.password && (
-                <p className="mt-1 text-sm text-red-400">
+                <p className="mt-1 text-sm text-red-600">
                   {errors.password.message}
                 </p>
               )}
             </div>
 
-            {/* Button */}
             <button
               type="submit"
-              className="w-full rounded-lg bg-indigo-600 py-3 font-semibold text-white transition hover:bg-indigo-500 active:scale-[0.98]"
+              className="w-full rounded-lg bg-[#1b2340] py-3 font-semibold text-[#f8f6f0] transition hover:bg-[#242c4d] active:scale-[0.95]"
             >
               Create Account
             </button>
           </form>
 
           {/* Login */}
-          <p className="mt-6 text-center text-sm text-slate-400">
+          <p className="mt-6 text-center text-sm text-[#5a5240]">
             Already have an account?{" "}
             <span
               onClick={() => {
                 navigate("/");
               }}
-              className="font-medium text-indigo-400 hover:text-indigo-300"
+              className="font-medium text-[#8a6d1f] hover:text-[#c9a961]"
             >
               Sign in
             </span>

@@ -24,4 +24,4 @@ export const  currentLogin = createAsyncThunk('user/me',async(_,thunkapi)=>{
     } catch (error) {
         return thunkapi.rejectWithValue(error)
     }
-})
+}) 
