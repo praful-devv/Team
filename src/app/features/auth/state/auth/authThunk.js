@@ -6,7 +6,7 @@ export const authEmployee = createAsyncThunk(
   async (credentials, thunkapi) => {
     try {
       const res = await api.post("/auth/login", credentials);
-    //   console.log(res.data.data);
+     
       return res.data.data;
     } catch (error) {
       return thunkapi.rejectWithValue(error);
@@ -14,14 +14,12 @@ export const authEmployee = createAsyncThunk(
   },
 );
 
-
-export const  currentLogin = createAsyncThunk('user/me',async(_,thunkapi)=>{
-
-    try {
-        let res = await api.get("/auth/me");
-        console.log(res)
-        return res.data.user
-    } catch (error) {
-        return thunkapi.rejectWithValue(error)
-    }
-}) 
+export const currentLogin = createAsyncThunk("user/me", async (_, thunkapi) => {
+  try {
+    let res = await api.get("/auth/me");
+   
+    return res.data.user;
+  } catch (error) {
+    return thunkapi.rejectWithValue(error);
+  }
+});

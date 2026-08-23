@@ -1,1 +1,78 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+
+
+:root {
+  /* color */
+  --primary: rgb(99, 102, 241);
+  --secondary: rgb(148, 163, 184);
+  --third: rgb(244, 114, 114);
+
+  --success: rgb(34, 197, 94);
+  --warning: rgb(234, 179, 8);
+  --danger: rgb(239, 68, 68);
+
+  /* bg-color */
+  --bg-main: rgb(15, 23, 42);
+  --bg-surface: rgb(30, 41, 59);
+  --bg-card: rgb(30, 41, 59);
+  --bg-hover: rgb(51, 65, 85);
+
+  /* text-color */
+  --text-primary: rgb(248, 250, 252);
+  --text-secondary: rgb(203, 213, 225);
+  --text-third: rgb(148, 163, 184);
+  --text-four:#b381e9;
+
+  /* border */
+  --border-color: rgb(51, 65, 85);
+
+  /* shadow */
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.28);
+
+  /* radius */
+  --radius-md: 10px;
+}
+
+/* For Light theme */
+
+.light{
+ /* color */
+  --primary: rgb(79, 70, 229);
+  --secondary: rgb(71, 85, 105);
+  --third: rgb(220, 38, 38);
+
+  --success: rgb(22, 163, 74);
+  --warning: rgb(217, 119, 6);
+  --danger: rgb(220, 38, 38);
+
+  /* bg-color */
+  --bg-main: rgb(250, 250,250);
+  --bg-surface: rgb(255, 255, 255);
+  --bg-card: rgb(255, 255, 255);
+  --bg-hover: rgb(241, 245, 249);
+
+  /* text-color */
+  --text-primary: rgb(15, 23, 42);
+  --text-secondary: rgb(71, 85, 105);
+  --text-third: rgb(100, 116, 139);
+  --text-four:#954cef;
+
+  /* border */
+  --border-color: rgb(226, 232, 240);
+
+  /* shadow */
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  /* radius */
+  --radius-md: 10px;
+
+}
+
+body{
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    /* transition: 0.3s ease; */
+}
+
+

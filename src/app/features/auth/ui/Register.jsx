@@ -13,14 +13,14 @@ function Register() {
     <div className="min-h-screen bg-[#1b2330] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-[#f8f6f0]">
+          <h1 className="text-3xl font-bold  text-[#f8f6f0] font-serif">
+            
             Create your account
           </h1>
         </div>
 
         <div className="rounded-2xl border border-[#c9a961]/40 bg-[#f8e6f0] p-8 shadow-2xl">
           <form onSubmit={handleSubmit(onRegister)} className="space-y-5">
-           
             <div>
               <label className="mb-2 block text-sm font-medium text-[#1b2340]">
                 Full Name
