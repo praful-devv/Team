@@ -1,11 +1,18 @@
 import React from 'react'
-import { CirclePile, ClipboardList, LayoutDashboard, MessageSquareText, Settings } from "lucide-react";
+import {useSelector} from 'react-redux'
+import { NavLink } from 'react-router-dom';
+import {adminNavigation,employeeNavigation} from '../../../../constant/navigation'
 
 
 
 const Asidebar = () => {
+
+  let {employee} = useSelector(store=>store.auth)
+
+  let navigations = employee?.role ==='admin'?adminNavigation:employeeNavigation
+
   return (
-    <div className="flex flex-col gap-14 ">
+    <div className="flex flex-col gap-10 ">
       <div className="flex flex-col gap-2 p-4 ">
         <h2 className="text-lg md:text-2xl lg:text-3xl font-extrabold text-(--text-four)">
           Team Management
@@ -16,21 +23,25 @@ const Asidebar = () => {
       </div>
       <div>
         <div className="flex flex-col gap-4 ">
-          <div className="flex gap-2 text-lg items-center hover:border-r-3 md:px-4 hover:bg-(--bg-hover) p-0.5 px-2">
-            <LayoutDashboard /> Dashboard
-          </div>
-          <div className="flex gap-2 text-lg items-center hover:border-r-3 md:px-4 hover:bg-(--bg-hover) p-0.5 px-2">
-            <ClipboardList /> Tasks
-          </div>
-          <div className="flex gap-2 text-lg items-center hover:border-r-3 md:px-4 hover:bg-(--bg-hover) p-0.5 px-2">
-            <CirclePile /> Team
-          </div>
-          <div className="flex gap-2 text-lg items-center hover:border-r-3 md:px-4 hover:bg-(--bg-hover) p-0.5 px-2">
-            <MessageSquareText /> Chat
-          </div>
-          <div className="flex gap-2 text-lg items-center hover:border-r-3 md:px-4 hover:bg-(--bg-hover) p-0.5 px-2">
-            <Settings /> Setting
-          </div>
+         
+         {navigations.map((nav,idx)=>{
+          return (
+            <NavLink
+              className={({ isActive }) =>
+                `flex gap-2 text-lg items-center  md:pl-4  p-0.5 px-2 ${isActive?'border-r-3 bg-(--bg-hover)':''}`
+            
+              }
+              id={idx}
+              to={nav.path}
+              end='/'
+            >
+              {nav.icon}
+              {nav.title}
+            </NavLink>
+          );
+         })}
+       
+
         </div>
       </div>
     </div>

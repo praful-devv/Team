@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import Asidebar from "../features/Dashboard/ui/components/Asidebar";
-import Navbar from "../features/Dashboard/ui/components/Navbar";
+import Asidebar from "../features/dashboard/ui/components/Asidebar";
+import Navbar from "../features/dashboard/ui/components/Navbar";
 
 const DashboardLayout = () => {
 

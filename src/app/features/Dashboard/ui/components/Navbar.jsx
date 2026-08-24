@@ -5,10 +5,10 @@ const Navbar = () => {
   return (
     <div className="grid grid-cols-2 ">
       <div className="flex items-center p-2">
-        <div className="flex  border-2 border-(--border-color) p-1 rounded gap-2 items-center w-fit bg-[#1B191E]">
+        <div className="flex  border-2 border-(--border-color) p-1 rounded gap-2 items-center w-fit bg-(--bg-surface)">
           <Search size={20} />
           <input
-            className="w-full outline-0 md:w-62"
+            className="w-full outline-0 md:w-62 "
             type="text"
             placeholder="search workspace"
           />
