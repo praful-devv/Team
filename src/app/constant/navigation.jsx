@@ -7,14 +7,14 @@ export let adminNavigation = [
     icon: <LayoutDashboard />,
   },
   {
-    path: "/home/task",
-    title: "Tasks",
-    icon: <ClipboardList />,
-  },
-  {
     path: "/home/employee",
     title: "Employee",
     icon: <PersonStanding />,
+  },
+  {
+    path: "/home/task",
+    title: "Tasks",
+    icon: <ClipboardList />,
   },
   {
     path: "/home/chat",

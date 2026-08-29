@@ -1,9 +1,68 @@
-import React from 'react'
+import React from "react";
+import useEmployee from "../../hooks/useEmployee";
+import EmployeeStats from "../components/EmployeeStats";
+import EmployeeTable from "../components/EmployeeTable";
+import EmployeeToolbar from "../components/EmployeeToolbar";
 
 const Employee = () => {
-  return (
-    <div>Employee</div>
-  )
-}
+  let { data, isPending, PageNumber, ButtonPrev, ButtonNext, navigate, filter, Searchfilter  } =
+    useEmployee();
 
-export default Employee
+  if (isPending) return <h1>Loading...</h1>;
+  else console.log(data);
+
+  return (
+    <div
+      className="min-h-screen px-4 "
+      style={{
+        backgroundColor: "var(--bg-main)",
+        color: "var(--text-primary)",
+      }}
+    >
+      <div className="mb-8 flex md:items-center justify-between gap-4 flex-wrap">
+        <div>
+          <h1 className="text-4xl font-bold">Employees</h1>
+
+          <p
+            className="mt-1 text-sm"
+            style={{
+              color: "var(--text-third)",
+            }}
+          >
+            Manage and monitor your organization employees
+          </p>
+        </div>
+
+        <button
+          className="rounded-[var(--radius-md)] md:px-4 md:py-2 px-2  py-2 text-sm font-semibold transition hover:opacity-90"
+          style={{
+            backgroundColor: "var(--primary)",
+            color: "var(--text-primary)",
+          }}
+          onClick={() => navigate("/home/addEmployee")}
+        >
+          + Add Employee
+        </button>
+      </div>
+
+      <EmployeeStats employees={data.employees} />
+
+      <EmployeeToolbar filter={filter} Searchfilter={Searchfilter} />
+
+      <EmployeeTable employees={data.employees} />
+      <div className="flex justify-center gap-4">
+        <button className="" onClick={ButtonPrev}>
+          prev
+        </button>
+        <p>{PageNumber}</p>
+        {console.log(PageNumber)}
+
+        <button className="" onClick={ButtonNext}>
+          next
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Employee;

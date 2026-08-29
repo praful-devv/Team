@@ -1,78 +1,134 @@
 @import "tailwindcss";
 
-
-
 :root {
-  /* color */
-  --primary: rgb(99, 102, 241);
+  /* =========================
+     BRAND
+  ========================= */
+
+  --primary: rgb(139, 92, 246);
+  --primary-soft: rgba(139, 92, 246, 0.12);
+
   --secondary: rgb(148, 163, 184);
-  --third: rgb(244, 114, 114);
 
-  --success: rgb(34, 197, 94);
-  --warning: rgb(234, 179, 8);
-  --danger: rgb(239, 68, 68);
+  --success: rgb(52, 211, 153);
+  --warning: rgb(251, 191, 36);
+  --danger: rgb(248, 113, 113);
 
-  /* bg-color */
-  --bg-main: rgb(15, 23, 42);
-  --bg-surface: rgb(30, 41, 59);
-  --bg-card: rgb(30, 41, 59);
-  --bg-hover: rgb(51, 65, 85);
+  /* =========================
+     BACKGROUND
+  ========================= */
 
-  /* text-color */
-  --text-primary: rgb(248, 250, 252);
-  --text-secondary: rgb(203, 213, 225);
-  --text-third: rgb(148, 163, 184);
-  --text-four:#b381e9;
+  --bg-main: rgb(10, 10, 11);
 
-  /* border */
-  --border-color: rgb(51, 65, 85);
+  --bg-surface: rgb(17, 17, 18);
 
-  /* shadow */
-  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.28);
+  --bg-card: rgb(20, 20, 21);
 
-  /* radius */
-  --radius-md: 10px;
+  --bg-hover: rgb(27, 27, 29);
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  --text-primary: rgb(245, 245, 245);
+
+  --text-secondary: rgb(190, 190, 195);
+
+  --text-third: rgb(125, 125, 132);
+
+  --text-four: rgb(167, 139, 250);
+
+  /* =========================
+     BORDER
+  ========================= */
+
+  --border-color: rgb(42, 42, 45);
+
+  --border-subtle: rgb(30, 30, 32);
+
+  /* =========================
+     SHADOW
+  ========================= */
+
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-sm: 6px;
+
+  --radius-md: 8px;
+
+  --radius-lg: 12px;
+
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
-/* For Light theme */
+.light {
+  /* =========================
+     BRAND
+  ========================= */
 
-.light{
- /* color */
-  --primary: rgb(79, 70, 229);
-  --secondary: rgb(71, 85, 105);
-  --third: rgb(220, 38, 38);
+  --primary: rgb(99, 70, 229);
+
+  --primary-soft: rgba(99, 70, 229, 0.08);
+
+  --secondary: rgb(71, 71, 80);
 
   --success: rgb(22, 163, 74);
-  --warning: rgb(217, 119, 6);
+
+  --warning: rgb(202, 138, 4);
+
   --danger: rgb(220, 38, 38);
 
-  /* bg-color */
-  --bg-main: rgb(255, 255, 255);
-  --bg-surface: rgb(223, 222, 222);
-  --bg-card: rgb(10, 8, 8);
-  --bg-hover: rgb(212, 210, 210);
+  /* =========================
+     BACKGROUND
+  ========================= */
 
-  /* text-color */
-  --text-primary: rgb(15, 23, 42);
-  --text-secondary: rgb(71, 85, 105);
-  --text-third: rgb(100, 116, 139);
-  --text-four:#954cef;
+  --bg-main: rgb(247, 247, 245);
 
-  /* border */
-  --border-color: rgb(226, 232, 240);
+  --bg-surface: rgb(241, 241, 239);
 
-  /* shadow */
-  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --bg-card: rgb(255, 255, 255);
 
-  /* radius */
-  --radius-md: 10px;
+  --bg-hover: rgb(235, 235, 233);
 
+  /* =========================
+     TEXT
+  ========================= */
+
+  --text-primary: rgb(20, 20, 22);
+
+  --text-secondary: rgb(71, 71, 80);
+
+  --text-third: rgb(115, 115, 125);
+
+  --text-four: rgb(109, 72, 210);
+
+  /* =========================
+     BORDER
+  ========================= */
+
+  --border-color: rgb(220, 220, 218);
+
+  --border-subtle: rgb(232, 232, 230);
+
+  /* =========================
+     SHADOW
+  ========================= */
+
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-body{
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    /* transition: 0.3s ease; */
+body {
+  background-color: var(--bg-main);
+
+  color: var(--text-primary);
+
+  /* transition: 0.3s ease; */
 }
-
-
