@@ -1,6 +1,9 @@
 import React from "react";
 
 const EmployeeStats = ({ employees }) => {
+
+  
+  
   const totalEmployees = employees.length;
 
   const activeEmployees = employees.filter(
@@ -38,6 +41,7 @@ const EmployeeStats = ({ employees }) => {
 
   return (
     <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+     
       {stats.map((stat) => (
         <div
           key={stat.label}

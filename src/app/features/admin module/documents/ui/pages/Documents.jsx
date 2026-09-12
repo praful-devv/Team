@@ -1,11 +1,22 @@
-import React from 'react'
+// import useDocument from "../../hooks/useDocument";
+
+import useDocument from "../../hooks/useDocument";
+import DocumentCard from "../components/DocumentCard";
+import DocumentHeader from "../components/DocumentHeader";
 
 const Documents = () => {
-  return (
-    <div>
-        <h1>document page</h1>
-    </div>
-  )
-}
+  const { data, createDocument, deleteDocument, register, handleSubmit } = useDocument();
 
-export default Documents
+  return (
+    <div className="flex flex-col p-1 ">
+      <DocumentHeader
+        register={register}
+        handleSubmit={handleSubmit}
+        createDocument={createDocument}
+      />
+      <DocumentCard data={data} />
+    </div>
+  );
+};
+
+export default Documents;

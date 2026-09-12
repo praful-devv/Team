@@ -1,7 +1,11 @@
 import { useForm } from "react-hook-form";
-import { createEmployee } from "../apis/employeesApi";
+import { createEmployee, deleteEmployee } from "../apis/employeesApi";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const useaddEmployee = () => {
+
+  let queryClient = useQueryClient()
+
   const {
     register,
     handleSubmit,
@@ -28,7 +32,48 @@ const useaddEmployee = () => {
     }
   }
 
-  return { register, handleSubmit, errors, formSubmit };
+const deleteMutation = useMutation({
+  mutationFn: (id) => deleteEmployee(id),
+  
+
+  onMutate: async (id) => {
+    await queryClient.cancelQueries({
+      queryKey: ["AllEmployees"],
+    });
+
+    queryClient.setQueriesData(
+      {
+        queryKey: ["AllEmployees"],
+      },
+      (oldData) => {
+        if (!oldData) return oldData;
+
+        return {
+          ...oldData,
+
+          employees: oldData.employees.filter(
+            (employee) => employee._id !== id,
+          ),
+
+          pagination: {
+            ...oldData.pagination,
+            total: oldData.pagination.total - 1,
+          },
+        };
+      },
+    );
+  },
+
+  onSettled: () => {
+    queryClient.invalidateQueries({
+      queryKey: ["AllEmployees"],
+    });
+  },
+});
+  
+
+  return { register, handleSubmit, errors, formSubmit, deleteMutation };
 };
+
 
 export default useaddEmployee;

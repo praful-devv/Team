@@ -1,4 +1,4 @@
-import { Box, Building, CirclePile, ClipboardList, Files, LayoutDashboard, List, MessageSquareText, Paperclip, PersonStanding, Presentation, Settings } from "lucide-react";
+import { CirclePile, ClipboardList, Files, LayoutDashboard, List, MessageSquareText, Paperclip, PersonStanding, Presentation, Settings } from "lucide-react";
 
 export let adminNavigation = [
   {
@@ -15,16 +15,6 @@ export let adminNavigation = [
     path: "/home/task",
     title: "Tasks",
     icon: <ClipboardList />,
-  },
-  {
-    path: "/home/chat",
-    title: "Chat",
-    icon: <MessageSquareText />,
-  },
-  {
-    path: "/home/department",
-    title: "Department",
-    icon: <Building />,
   },
   {
     path: "/home/documents",
@@ -48,21 +38,6 @@ export let employeeNavigation = [
     path: "/home/myTask",
     title: "MyTask",
     icon: <List />,
-  },
-  {
-    path: "/home/attendance",
-    title: "Attendance",
-    icon: <Presentation />,
-  },
-  {
-    path: "/home/chat",
-    title: "Chat",
-    icon: <MessageSquareText />,
-  },
-  {
-    path: "/home/profile",
-    title: "Profile",
-    icon: <CirclePile />,
   },
   {
     path: "/home/setting",

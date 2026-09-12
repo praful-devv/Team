@@ -1,15 +1,24 @@
-import React from "react";
 import useEmployee from "../../hooks/useEmployee";
 import EmployeeStats from "../components/EmployeeStats";
 import EmployeeTable from "../components/EmployeeTable";
 import EmployeeToolbar from "../components/EmployeeToolbar";
 
 const Employee = () => {
-  let { data, isPending, PageNumber, ButtonPrev, ButtonNext, navigate, filter, Searchfilter  } =
-    useEmployee();
+  let {
+    data,
+    isPending,
+    PageNumber,
+    ButtonPrev,
+    ButtonNext,
+    navigate,
+    filter,
+    Searchfilter,
+  } = useEmployee();
 
   if (isPending) return <h1>Loading...</h1>;
-  else console.log(data);
+
+  console.log(data);
+  
 
   return (
     <div
@@ -21,7 +30,7 @@ const Employee = () => {
     >
       <div className="mb-8 flex md:items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-4xl font-bold">Employees</h1>
+          <h2 className="text-3xl font-bold">Employees</h2>
 
           <p
             className="mt-1 text-sm"
@@ -49,13 +58,15 @@ const Employee = () => {
 
       <EmployeeToolbar filter={filter} Searchfilter={Searchfilter} />
 
-      <EmployeeTable employees={data.employees} />
+      <div className="  overflow-auto">
+        <EmployeeTable employees={data.employees} />
+      </div>
+
       <div className="flex justify-center gap-4">
         <button className="" onClick={ButtonPrev}>
           prev
         </button>
         <p>{PageNumber}</p>
-        {console.log(PageNumber)}
 
         <button className="" onClick={ButtonNext}>
           next

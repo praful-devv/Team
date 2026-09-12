@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleTheme } from '../../../../shared/state/themeSlice'
+import useTasks from '../../admin module/tasks/hooks/useTasks';
+
+
 
 const DashboardHook = () => {
+
+ const [task, setTask] = useState([]);
+
+ const { data } = useTasks();
+
+ useEffect(() => {
+   if (data) {
+     setTask(data);
+   }
+ }, [data]);
+
+   
+    
+
 
     const dispatch = useDispatch()
     const {mode} = useSelector(store => store.theme)
@@ -11,7 +28,7 @@ const DashboardHook = () => {
         dispatch(toggleTheme())
     }
 
-  return { handleTheme ,mode};
+  return { handleTheme ,mode ,task};
 }
 
 export default DashboardHook

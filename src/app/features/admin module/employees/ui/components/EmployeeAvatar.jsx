@@ -1,6 +1,8 @@
 import React from "react";
 
 const EmployeeAvatar = ({ avatar, name }) => {
+  
+
   if (avatar) {
     return (
       <img
@@ -24,4 +26,4 @@ const EmployeeAvatar = ({ avatar, name }) => {
   );
 };
 
-export default EmployeeAvatar;
+export default React.memo(EmployeeAvatar,(prev,next)=> prev.avatar === next.avatar && prev.name === next.name);

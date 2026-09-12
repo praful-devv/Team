@@ -8,10 +8,6 @@ export let employeeRoutes = [
         element:<MyTask/>
     },
     {
-        path:'/home/attendance',
-        element:<Attendance/>
-    },
-    {
         path:'/home/profile',
         element:<Profile/>
     }

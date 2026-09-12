@@ -5,26 +5,23 @@ export const api = axios.create({
   withCredentials: true,
 });
 
-api.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    let request = error.config
+// api.interceptors.response.use(
+//   (response) => response,
+//   async (error) => {
+//     let request = error.config;
 
-    if(error.response.status === 401 && !request._retry){
-      request._retry = true;
+//     if (error.response.status === 401 && !request._retry) {
+//       request._retry = true;
 
-      try {
+//       try {
+//         await api.get("/auth/get-accessToken");
+//         return api(request);
+//       } catch (error) {
+//         window.location.href = "/";
+//         return Promise.reject(error);
+//       }
+//     }
 
-        await api.get('/auth/get-accessToken')
-        return api(request)
-        
-      } catch (error) {
-
-
-        window.location.href = '/'
-        return Promise.reject(error)
-        
-      }
-    }
-  },
-);
+//     return Promise.reject(error);
+//   },
+// );

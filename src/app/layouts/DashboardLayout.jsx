@@ -21,7 +21,7 @@ const DashboardLayout = () => {
       <div className="border-r border-gray-500 "><Asidebar/></div>
       <div className="flex flex-col gap-5 p-4 overflow-auto">
         <Navbar/>
-        <div className="overflow-auto">
+        <div className="overflow-y-auto ">
 
         <Outlet />
         </div>

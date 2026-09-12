@@ -20,6 +20,9 @@ export const currentLogin = createAsyncThunk("user/me", async (_, thunkapi) => {
    
     return res.data.user;
   } catch (error) {
-    return thunkapi.rejectWithValue(error);
+   return thunkapi.rejectWithValue({
+     message: error.response?.data?.message || error.message,
+     status: error.response?.status,
+   });
   }
 });

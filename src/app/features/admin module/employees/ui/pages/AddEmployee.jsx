@@ -2,6 +2,7 @@ import React from "react";
 import useaddEmployee from "../../hooks/useaddEmployee";
 
 const AddEmployee = () => {
+  
   let { register, handleSubmit, errors, formSubmit } = useaddEmployee();
 
   return (
@@ -196,12 +197,12 @@ const AddEmployee = () => {
               }}
             >
               <option value="">Select department</option>
-              <option value="administrative">Administrative</option>
-              <option value="engineering">Engineering</option>
-              <option value="design">Design</option>
-              <option value="marketing">Marketing</option>
+              <option value="sales">Sales</option>
+              <option value="developer">Developer</option>
+              <option value="security">Security</option>
+              <option value="management">Management</option>
               <option value="finance">Finance</option>
-              <option value="hr">HR</option>
+              <option value="hr">Hr</option>
             </select>
 
             {errors.department && (

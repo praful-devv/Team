@@ -1,10 +1,19 @@
-import React from "react";
-
 import EmployeeAvatar from "./EmployeeAvatar";
 import StatusBadge from "./StatusBadge";
+import useaddEmployee from "../../hooks/useaddEmployee";
+import useUpdateEmployee from "../../hooks/useUpdateEmployee";
+
 
 const EmployeeRow = ({ employee }) => {
+   
   const { avatar, name, email, department, role, status, createdAt } = employee;
+  let { deleteMutation } = useaddEmployee();
+
+  
+    const { updateMutation } = useUpdateEmployee();
+
+  
+  
 
   const joinedDate = new Date(createdAt).toLocaleDateString("en-IN", {
     day: "2-digit",
@@ -77,20 +86,39 @@ const EmployeeRow = ({ employee }) => {
       </td>
 
       <td className="px-5 py-4">
+        <select
+          name=""
+          id=""
+          disabled={updateMutation.isPending}
+          onChange={(e) => {
+            updateMutation.mutate({
+              id: employee._id,
+              data: {
+                status: e.target.value,
+              },
+            });
+          }}
+        >
+          <option className="text-black">status</option>
+          <option value={"active"} className="text-black">
+            active
+          </option>
+          <option value={"inactive"} className="text-black">
+            inactive
+          </option>
+        </select>
+      </td>
+
+      <td className="px-5 py-4">
         <button
+          onClick={() => deleteMutation.mutate(employee._id)}
           className="rounded px-3 py-1.5 text-sm transition hover:opacity-80"
           style={{
             color: "var(--text-four)",
           }}
         >
-          View
+          delete
         </button>
-      </td>
-      <td className="px-5 py-4">
-        <select name="" id="">
-          <option className="text-black">update</option>
-          <option className="text-black">delete</option>
-        </select>
       </td>
     </tr>
   );
