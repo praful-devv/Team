@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../features/auth/ui/Login";
 import Register from "../features/auth/ui/Register";
 import DashboardLayout from "../layouts/DashboardLayout";
-import Home from "../features/dashboard/ui/pages/Home";
 import { useDispatch } from "react-redux";
 import { currentLogin } from "../features/auth/state/auth/authThunk";
 import PublicRoutes from "../protectedRoutes/PublicRoutes";
